@@ -3,9 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Récupère le conteneur des skins où les éléments seront ajoutés
     const skinsContainer = document.getElementById('skinsContainer');
-    
+
     // Récupère le nom du champion depuis la variable PHP (championName)
     const championName = window.championName;
+
+    // Ajout du style pour organiser plusieurs cartes par ligne
+    skinsContainer.style.display = "flex";
+    skinsContainer.style.flexWrap = "wrap";
+    skinsContainer.style.justifyContent = "center";
+    skinsContainer.style.gap = "20px";
+    skinsContainer.style.padding = "20px";
 
     // Vérifie si un nom de champion est passé depuis le PHP
     if (championName) {
@@ -16,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json()) // Parse la réponse JSON
             .then(data => {
                 // Accède aux données spécifiques du champion
-                const champion = data.data[championName]; 
+                const champion = data.data[championName];
 
                 // Si des skins sont disponibles pour ce champion, on les affiche
                 if (champion && champion.skins) {
@@ -35,24 +42,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour afficher les skins du champion
     function displaySkins(skins) {
-        if (skins && skins.length > 0) {
-            skinsContainer.innerHTML = ''; // Réinitialise le contenu du conteneur pour éviter les doublons
-            skins.forEach(skin => {
-                // Crée un div pour chaque skin
-                const skinDiv = document.createElement('div');
-                skinDiv.className = 'skin border-2 border-yellow-600 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-all duration-300 bg-black/30 p-4'; // Style de la carte
+        skinsContainer.innerHTML = ''; // Réinitialise le contenu du conteneur avant d'afficher de nouveaux skins
+        skins.forEach(skin => {
+            const skinNum = skin.num; // Numéro du skin utilisé dans l'URL
+            const skinName = skin.name === "default" ? championName : skin.name; // Nom du skin ou nom du champion par défaut
+            const splashUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${skinNum}.jpg`; // URL de l'image du skin
 
-                // Ajoute un titre et une image pour chaque skin
-                skinDiv.innerHTML = `
-                    <h3 class="text-center text-yellow-400 text-lg font-semibold mb-2">${skin.name === "default" ? championName : skin.name}</h3>
-                    <img class="w-full h-auto rounded-lg" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${skin.num}.jpg" alt="${skin.name}">
-                `;
-                
-                // Ajoute le div du skin au conteneur
-                skinsContainer.appendChild(skinDiv);
+            // Crée un nouvel élément div pour chaque skin
+            const skinDiv = document.createElement('div');
+            skinDiv.className = "skin"; // Ajoute une classe CSS pour le style
+
+            // Applique des styles directement sur chaque carte de skin via JavaScript
+            skinDiv.style.border = "2px solid #fbbf24"; // Bordure jaune
+            skinDiv.style.borderRadius = "10px"; // Bordure légèrement arrondie
+            skinDiv.style.overflow = "hidden"; // Empêche les images de déborder
+            skinDiv.style.transition = "transform 0.3s ease"; // Effet de transformation sur le survol
+            skinDiv.style.width = "300px"; // Largeur des cartes
+            skinDiv.style.backgroundColor = "#111"; // Fond noir pour le texte
+
+            // Remplir l'HTML de l'élément div avec les informations du skin
+            skinDiv.innerHTML = `
+                <img src="${splashUrl}" alt="${skinName}" style="width: 100%; display: block;">
+                <div class="skin-name" style="padding: 10px; background: #222; text-align: center; color: #fbbf24;">
+                    ${skinName}
+                </div>
+            `;
+
+            // Appliquer l'effet de survol pour agrandir légèrement la carte
+            skinDiv.addEventListener("mouseenter", () => {
+                skinDiv.style.transform = "scale(1.05)";
             });
-        } else {
-            skinsContainer.innerHTML = '<p>Aucun skin disponible pour ce champion.</p>'; // Si aucun skin disponible
-        }
+
+            skinDiv.addEventListener("mouseleave", () => {
+                skinDiv.style.transform = "scale(1)";
+            });
+
+            // Ajoute le div du skin dans le conteneur
+            skinsContainer.appendChild(skinDiv);
+        });
     }
 });
