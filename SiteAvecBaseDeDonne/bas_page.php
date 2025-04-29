@@ -10,8 +10,8 @@
       <div>
         <h3 class="text-yellow-400 font-bold text-lg mb-4">Navigation</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="#homepage" class="text-yellow-400 hover:text-yellow-300 transition">Accueil</a></li>
-          <li><a href="#cardlist" class="text-yellow-400 hover:text-yellow-300 transition">Toutes les cartes</a></li>
+          <li><a href="index.php" class="text-yellow-400 hover:text-yellow-300 transition">Accueil</a></li>
+          <li><a href="cardlist.php" class="text-yellow-400 hover:text-yellow-300 transition">Toutes les cartes</a></li>
           <li><a href="#mycard" class="text-yellow-400 hover:text-yellow-300 transition">Ma collection</a></li>
           <li><a href="connexion.php" class="text-yellow-400 hover:text-yellow-300 transition">Se connecter</a></li>
         </ul>
