@@ -10,7 +10,7 @@
       <p class="text-lg md:text-xl text-gray-300 mb-8">
         Constituez la collection ultime de cartes League of Legends et affichez vos plus grands héros.
       </p>
-      <a href="#cardlist" class="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold rounded-full transition duration-300 shadow-lg">
+      <a href="listcard.php" class="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold rounded-full transition duration-300 shadow-lg">
         Voir les cartes
       </a>
     </div>

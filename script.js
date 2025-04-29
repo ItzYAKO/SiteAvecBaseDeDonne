@@ -49,7 +49,7 @@ function displayChampions(champions) {
             <a href="champion.php?champion=${champName}">
                 <img src="${splashUrl}" alt="Cliquez pour rediriger" style="width: 100%; display: block;">
             </a>
-            <div class="champion-name" style="padding: 10px; background: #222; text-align: center; color: #fbbf24;">
+            <div style="padding: 10px; background: #222; text-align: center; color: #fbbf24;">
                 ${champ.name} - ${champTitle}
             </div>
         `;

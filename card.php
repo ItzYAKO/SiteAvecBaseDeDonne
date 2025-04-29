@@ -5,6 +5,7 @@
     // Récupère les paramètres GET depuis l'URL
     $champion = isset($_GET['champion']) ? $_GET['champion'] : null;
     $skin = isset($_GET['skin']) ? $_GET['skin'] : null;
+    $skinName = isset($_GET['skinName']) ? htmlspecialchars($_GET['skinName']) : null;
 ?>
 
 <div class="flex flex-col items-center p-8 text-center text-white">
@@ -17,7 +18,7 @@
             $imageUrl = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{$championSafe}_{$skinNum}.jpg";
         ?>
 
-        <h2 class="text-2xl font-bold text-yellow-400 mb-6">Carte de <?= $championSafe ?> - Skin #<?= $skinNum ?></h2>
+        <h2 class="text-2xl font-bold text-yellow-400 mb-6">Carte de <?= $championSafe ?> -  <?= $skinName ?></h2>
 
         <img src="<?= $imageUrl ?>" alt="Skin de <?= $championSafe ?>" class="w-full max-w-4xl rounded-2xl border-4 border-yellow-500 shadow-lg mb-6">
 

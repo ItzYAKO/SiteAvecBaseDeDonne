@@ -62,8 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Remplir l'HTML de l'élément div avec les informations du skin
             skinDiv.innerHTML = `
+                <a href="card.php?champion=${championName}&skin=${skin.num}&skinName=${skinName}">
                 <img src="${splashUrl}" alt="${skinName}" style="width: 100%; display: block;">
-                <div class="skin-name" style="padding: 10px; background: #222; text-align: center; color: #fbbf24;">
+                </a>
+                <div style="padding: 10px; background: #222; text-align: center; color: #fbbf24;">
                     ${skinName}
                 </div>
             `;

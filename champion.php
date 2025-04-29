@@ -10,9 +10,9 @@
     </h1>
 
     <div style="margin-bottom: 20px;">
-        <a href="index.php" style="text-decoration: none;">
+        <a href="listcard.php" style="text-decoration: none;">
             <button class="px-6 py-2 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-600 transition duration-300">
-                Retour à l'accueil
+                Retour à la liste des cartes
             </button>
         </a>
     </div>
