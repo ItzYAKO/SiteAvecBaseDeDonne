@@ -65,7 +65,7 @@ $livres_apres_2000 = $stmt2000->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($livre['auteur']) ?></td>
                     <td><?= $livre['annee_publication'] ?></td>
                     <td><?= $livre['disponible'] ? 'Oui' : 'Non' ?></td>
-                    <td><a href="?id=<?= $livre['id'] ?>&action=delete" onclick="return confirm('Supprimer ce livre ?');">Supprimer</a></td>
+                    <td><a href="?id=<?= $livre['id'] ?>&action=delete" >Supprimer</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
