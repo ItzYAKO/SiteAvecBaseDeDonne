@@ -19,6 +19,14 @@ if (!$user) {
     exit;
 }
 
+// Si l'utilisateur clique sur "Se déconnecter"
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+  session_unset();
+  session_destroy();
+  header("Location: connexion.php");
+  exit;
+}
+
 ?>
 
 <?php require "haut_page.php"; ?>

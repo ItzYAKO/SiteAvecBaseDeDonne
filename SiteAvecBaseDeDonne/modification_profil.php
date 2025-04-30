@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($field == 'username') {
                 $update_query = $pdo->prepare("UPDATE users SET username = :username WHERE id = :user_id");
                 $update_query->execute(['username' => $new_value, 'user_id' => $user_id]);
+                $_SESSION['username'] = $new_value;
             } elseif ($field == 'email') {
                 // Vérifier que l'email n'existe pas déjà dans la base de données
                 $check_email_query = $pdo->prepare("SELECT id FROM users WHERE email = :email AND id != :user_id");
@@ -50,11 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } else {
                     $update_query = $pdo->prepare("UPDATE users SET email = :email WHERE id = :user_id");
                     $update_query->execute(['email' => $new_value, 'user_id' => $user_id]);
+                    $_SESSION['email'] = $new_value;
                 }
             } elseif ($field == 'password' && !empty($new_password)) {
                 $new_password_hash = password_hash($new_password, PASSWORD_DEFAULT);
                 $update_query = $pdo->prepare("UPDATE users SET password = :password WHERE id = :user_id");
                 $update_query->execute(['password' => $new_password_hash, 'user_id' => $user_id]);
+                $_SESSION['password'] = $new_password_hash;
             }
 
             // Rediriger vers la page de profil après mise à jour

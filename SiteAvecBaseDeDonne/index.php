@@ -1,5 +1,5 @@
-<?php require "haut_page.php"; ?>
 <?php require_once 'init.php'; ?>
+<?php require "haut_page.php"; ?>
 
 
   <!-- SECTION HERO -->

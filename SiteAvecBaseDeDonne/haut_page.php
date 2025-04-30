@@ -18,7 +18,21 @@
       <a href="index.php" class="text-yellow-400 hover:text-yellow-300 transition">Accueil</a>
       <a href="listcard.php" class="text-yellow-400 hover:text-yellow-300 transition">Toutes les cartes</a>
       <a href="ma_collection.php" class="text-yellow-400 hover:text-yellow-300 transition">Ma collection</a>
-      <a href="connexion.php" class="text-yellow-400 hover:text-yellow-300 transition">Se connecter</a>
-      <a href="profil.php" class="text-yellow-400 hover:text-yellow-300 transition">Profil</a>
+      <?php 
+      if (isset($_SESSION['user_id'])) {
+        echo '<a href="profil.php" class="text-yellow-400 hover:text-yellow-300 transition">'.$_SESSION['username'].'</a>' ;
+      }
+      else  {    
+        
+        ?>
+        <a href="connexion.php" class="text-yellow-400 hover:text-yellow-300 transition">Se connecter</a>
+        <?php
+      }
+
+
+
+
+      ?>
     </nav>
+
   </header>
