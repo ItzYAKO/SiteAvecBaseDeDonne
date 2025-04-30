@@ -1,3 +1,5 @@
+<?php require_once 'init.php'; ?>
+
 <?php require "haut_page.php"; ?>
 
 <!-- SECTION INSCRIPTION (style compact et clean) -->
@@ -38,6 +40,13 @@
         class="w-full py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold rounded-xl transition duration-300">
         S'inscrire
       </button>
+
+      <?php if (isset($_GET['error'])): ?>
+        <div style="color: red; margin-bottom: 1rem; font-weight: bold;">
+          <?= htmlspecialchars($_GET['error']) ?>
+        </div>
+      <?php endif; ?>
+
 
       <div class="flex justify-between text-sm text-yellow-300 mt-4">
         <a href="connexion.php" class="hover:underline">Déjà un compte ? Connectez-vous</a>

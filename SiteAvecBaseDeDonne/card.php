@@ -1,3 +1,5 @@
+<?php require_once 'init.php'; ?>
+
 <?php
     // Inclus le haut de page (header commun)
     require 'haut_page.php';

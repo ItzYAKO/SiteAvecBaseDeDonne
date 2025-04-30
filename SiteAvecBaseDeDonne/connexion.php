@@ -1,3 +1,5 @@
+<?php require_once 'init.php'; ?>
+
 <?php require "haut_page.php"; ?>
 
 <!-- SECTION CONNEXION (style compact et clean) -->
