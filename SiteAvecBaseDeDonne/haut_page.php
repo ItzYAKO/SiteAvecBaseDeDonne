@@ -17,7 +17,8 @@
     <nav class="hidden md:flex space-x-8 text-sm font-semibold">
       <a href="index.php" class="text-yellow-400 hover:text-yellow-300 transition">Accueil</a>
       <a href="listcard.php" class="text-yellow-400 hover:text-yellow-300 transition">Toutes les cartes</a>
-      <a href="#mycards" class="text-yellow-400 hover:text-yellow-300 transition">Ma collection</a>
+      <a href="ma_collection.php" class="text-yellow-400 hover:text-yellow-300 transition">Ma collection</a>
       <a href="connexion.php" class="text-yellow-400 hover:text-yellow-300 transition">Se connecter</a>
+      <a href="profil.php" class="text-yellow-400 hover:text-yellow-300 transition">Profil</a>
     </nav>
   </header>

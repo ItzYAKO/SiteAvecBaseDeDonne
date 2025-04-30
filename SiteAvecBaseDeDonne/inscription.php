@@ -48,9 +48,10 @@
       <?php endif; ?>
 
 
-      <div class="flex justify-between text-sm text-yellow-300 mt-4">
+      <div class="text-sm text-yellow-300 mt-4 text-center">
         <a href="connexion.php" class="hover:underline">Déjà un compte ? Connectez-vous</a>
       </div>
+
     </form>
   </div>
 

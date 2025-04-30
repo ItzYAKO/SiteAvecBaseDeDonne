@@ -1,4 +1,5 @@
 <?php require "haut_page.php"; ?>
+<?php require_once 'init.php'; ?>
 
 
   <!-- SECTION HERO -->
