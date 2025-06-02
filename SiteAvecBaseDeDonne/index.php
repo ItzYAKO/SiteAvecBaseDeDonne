@@ -26,6 +26,10 @@
   <p class="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">
     Explorez toutes les cartes disponibles, des combattants féroces aux mages mystiques. Chaque carte capture l'essence d'un champion iconique de League of Legends.
   </p> 
+</br>
+  <a href="coffre.php" class="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold rounded-full transition duration-300 shadow-lg">
+      Obtenez des cartes
+    </a> 
 </section> 
 
 

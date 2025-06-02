@@ -1,4 +1,4 @@
-<?php require_once 'init.php';  <!-- Initialisation de la session et connexion à la base de données -->
+<?php require_once 'init.php'; ?> <!-- Initialisation de la session et connexion à la base de données -->
 
 <?php
 // Récupération des données envoyées par le formulaire

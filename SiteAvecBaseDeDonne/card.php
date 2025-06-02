@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
 
     <!-- Formulaire d'ajout ou de retrait, visible uniquement si l'utilisateur est connecté -->
     <?php if (isset($_SESSION['user_id'])): ?>
-        <form method="POST" class="flex gap-6">
+        <form method="POST" class="flex gap-6 justify-center">
             <!-- Bouton pour ajouter la carte à la collection -->
             <button type="submit" name="add_to_collection"
                 class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-200">
@@ -88,6 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
                 Retirer de ma collection
             </button>
         </form>
+
+        <!-- Bouton Ma collection -->
+        <div class="mt-6">
+            <a href="ma_collection.php" 
+               class="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-2 px-8 rounded-xl transition-all duration-200">
+               Ma collection
+            </a>
+        </div>
     <?php else: ?>
         <!-- Message invitant à se connecter -->
         <p class="text-yellow-300 mt-4">Connectez-vous pour ajouter ou retirer cette carte de votre collection.</p>

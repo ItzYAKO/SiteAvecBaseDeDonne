@@ -1,5 +1,5 @@
 <?php
-require_once 'init.php';  <!-- Initialisation de la session et connexion à la base de données -->
+require_once 'init.php';  // Initialisation de la session et connexion à la base de données
 
 // Vérifie si l'utilisateur est connecté, sinon redirige vers la page de connexion
 if (!isset($_SESSION['user_id'])) {
